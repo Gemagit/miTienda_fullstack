@@ -1,0 +1,12 @@
+[
+    {
+    "id": "001",
+    "name":"vestido verde" ,
+    "img":"https://static.zara.net/assets/public/efc5/2bb5/5ef54c0ebe25/035122832f90/02513750500-p/02513750500-p.jpg?ts=1707133448078&w=824" ,
+    "relevancia": 7,
+    "precio":" 69.95€",
+    "descripción": "Vestido midi confeccionado en hilatura con mezcla de lana. Cuello subido fluido y manga sisa. Detalle de tejido drapeado en lateral. Bajo con abertura en espalda. Cierre con cremallera oculta.Un vestido midi de corte minimalista con detalle drapeado a un lateral confeccionado en un tejido delicado con mezcla de lana de tacto agradable. En su diseño depurado destaca el cuello subido que se abre en un escote en pico a la espalda. Una prenda sencilla y a la vez sofisticada.",
+    "tejido": "hilatura y lana",
+    "país de fabricación": "Thailandia"
+}
+]
