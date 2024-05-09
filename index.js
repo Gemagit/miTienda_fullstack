@@ -8,7 +8,8 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 
-const productRouter = require('./routes/products.routes');
+const productsRouter = require('./routes/products.routes');
+const fabricantesRouter= require('./routes/fabricantes.routes')
 app.use(cors());
 
 const loggerFormat = ':method :url :status :response-time ms - :res[content-length]'
@@ -25,7 +26,8 @@ app.use(express.json()); // Para habilitar recepción de datos JSON en una reque
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.use("/api",productRouter);// API products
+app.use("/api",productsRouter);// API products
+app.use("/api",fabricantesRouter);// API products
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
