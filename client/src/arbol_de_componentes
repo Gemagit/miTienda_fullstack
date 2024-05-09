@@ -1,0 +1,14 @@
+ÁRBOL DE COMPONENTES DE MI TIENDA FULLSTACK (sujeto a cambios)
+App --> App.jsx
+    Header --> Header.jsx
+        Logo
+    MainComponent --> MainComponent.jsx
+         SearchProductosFabricantes-->SearchProductsFabricantes.jsx
+         OrderBy-->OrderBy.jsx
+         ListaProductos--> ListProductos.jsx <section>
+            ProductCard--> ProductCard.jsx <article>
+            ProductCard
+            ProductCard
+         PaginationList-->PaginationList.jsx
+         ProductDetails-->ProductDetails.jsx <article>
+    Footer --> Footer.jsx --> <footer>
