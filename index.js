@@ -27,7 +27,7 @@ app.use(express.json()); // Para habilitar recepción de datos JSON en una reque
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use("/api",productsRouter);// API products
-app.use("/api",fabricantesRouter);// API products
+app.use("/api",fabricantesRouter);// API fabricantes
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
