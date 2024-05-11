@@ -1,0 +1,57 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+
+
+:root {
+    padding: 0;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    @include centered-column-layout;
+    padding: 0;
+    width:100%;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $black;
+}
+
+body {
+    max-width: 100%;
+    height: auto;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+}
+
+
+
+@media only screen and (min-width: 720px) {
+
+}
+
+
+
+@media only screen and (min-width: 1200px) {}

@@ -1,18 +1,22 @@
 import React from "react";
-//import Link from "react";
+// Importa Link desde la biblioteca de React Router
+ import { Link } from "react-router-dom";
 
-function ProductosCard({ productos }) {
+function ProductosCard({ product }) {
   return (
-    <article className='card'>
-      <h3>{productos?.name}</h3>
-      <img src={productos?.img} alt={productos?.name} />
-      <p> {productos?.relevancia}</p>
-      <p>{productos?.precio}</p>
-      {/*   <Link to={`/productos/${productos.id}?name=${productos.name}&image=${productos.img}&relevancia=${productos.relevancia}&precio=${productos.precio}}`}>
-      <button className="more-info-link">Más info</button>
-      </Link> */}
-    </article>
+    <>
+      <article className='card'>
+        <h4>{product.name}</h4>
+        <img src={product.img} alt={product.name} />
+        <p>{product.precio}</p>
+        <p>{product.relevancia}</p>
+      <Link to={`/productos/${product.id}?name=${product.name}&image=${product.img}&relevancia=${product.relevancia}&precio=${product.precio}`}> 
+         <button className="more-info-link">Más info</button> 
+        </Link>  
+      </article>
+    </>
   );
 }
 
 export default ProductosCard;
+
