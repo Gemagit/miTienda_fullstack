@@ -13,7 +13,7 @@ function ProductosCard({ product }) {
         <h4>{product.name}</h4>
         <p>{product.precio}</p>
         <p>{estrella}{product.relevancia}</p>
-      <Link to={`/productos/${product.id}?name=${product.name}&image=${product.img}&relevancia=${product.relevancia}&precio=${product.precio}`}> 
+      <Link to={`/productos/${product.id}?name=${product.name}&img=${product.img}&relevancia=${product.relevancia}&precio=${product.precio}&descripcion=${product.descripcion}&tejido=${product.tejido}&made=${product.made}`}> 
          <button className="more-info-link">Más info</button> 
         </Link>  
       </article>

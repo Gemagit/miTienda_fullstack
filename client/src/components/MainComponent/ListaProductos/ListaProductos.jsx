@@ -20,6 +20,7 @@ function ListaProductos() {
 
   useEffect(() => {
     getProducts(currentPage + 1); // currentPage + 1 porque la API usa páginas basadas en 1
+    window.scrollTo(0, 0);
   }, [currentPage]);
 
   return (
@@ -34,7 +35,7 @@ function ListaProductos() {
           : <p>cargando...</p>}
       </ul>
       <PaginationList 
-        totalPages={3} // Define el número total de páginas
+        totalPages={3} 
         currentPage={currentPage}
         onPageChange={setCurrentPage}
       />
