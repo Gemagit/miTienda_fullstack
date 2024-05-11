@@ -72,6 +72,26 @@ var newProducts = [
         tejido: "acetato",
         made: "Marruecos"
     },
+         {
+        id: "008",
+        name:"Body estampado tul" ,
+        img:"https://static.zara.net/assets/public/62a2/82b9/bb8846bb8b05/9b6197d66954/03000004050-a2/03000004050-a2.jpg?ts=1714725464830&w=563" ,
+        relevancia: 2,
+        precio:" 22.95€",
+        descripcion: "Body de cuello halter con lazada. Espalda descubierta. Tejido drapeado. Cierre en bajo con botones a presión y lateral con cremallera oculta en costura.",
+        tejido: "poliéster",
+        made: "Turquía"
+    },
+         {
+        id: "009",
+        name:"Collar cordón guindilla" ,
+        img:"https://static.zara.net/assets/public/4edd/5684/c05f4dbba605/6a2ef4dbe1d5/01856056600-p/01856056600-p.jpg?ts=1709657386507&w=563" ,
+        relevancia: 1,
+        precio:" 15.95€",
+        descripcion: "Collar de cordón largo realizado en piel. Colgante con forma de guindilla.",
+        tejido: "zinc",
+        made: "España"
+    },
         {
         id: "010",
         name:"Jeans regular tiro alto" ,

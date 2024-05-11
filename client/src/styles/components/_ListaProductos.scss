@@ -1,0 +1,48 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.listaProductos {
+    width:100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin:0;
+    padding: 0;
+    margin-bottom: 40px;
+
+
+    .listacard {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    li {
+        width: calc(50% - 20px);
+        /* Ancho del 50% menos el espacio entre las imágenes */
+        flex-grow: 1;
+        /* Permite que las imágenes se expandan para ocupar todo el espacio disponible */
+        max-width: 18%;
+        /* Establece un ancho máximo para las imágenes */
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        /* Ocupa todo el ancho del contenedor */
+        height: auto;
+        /* Mantiene la proporción de aspecto */
+    }
+}

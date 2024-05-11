@@ -14,7 +14,7 @@ function MainComponent({productList, setProductList}){
     <Routes>
       <Route path="/" element={<SearchProductosFabricantes productList={productList} setProductList={setProductList}/>} />
       <Route path="/" element={<ListaProductos productList={productList} />} />
-      <Route path="/detalles" element={<ProductosDetalles />} />
+      <Route path="/productos/:id" element={<ProductosDetalles />} />
       <Route path="/" element={<OrderBy />} />
       <Route path="/next" element={<PaginationList />} />
       <Route path="/*" element={<Navigate to={"/"} />} />

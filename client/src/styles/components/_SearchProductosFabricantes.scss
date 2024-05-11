@@ -1,0 +1,51 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.sectionsearch {
+    @include centered-column-layout;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    &>h2 {
+        color: $black;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    &>.search {
+        width:100%;
+        margin: 50px 20px 30px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        text-align: center;
+        text-align: left;
+      
+
+        &>label {
+            text-align: left;
+        }
+
+        &>input {
+            width:100%;
+            height: 30px;
+            text-align: center;
+        }
+        .search > input::placeholder {
+            margin-left: 40px;
+        }
+
+        &>button {
+            width: 100%;
+            height: 30px;
+            border: 0.2px solid $black;
+            color: $black;
+        }
+
+    }
+
+
+} 

@@ -8,40 +8,19 @@ function SearchProductosFabricantes() {
   const [isLoading, setIsLoading] = useState(false);
   const { setProductList } = useContext(ProductContext);
 
-  const searchProduct = async (searchTerm) => {
+  const searchProduct = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:5000/api/products?limit=10&page=1");
+      const response = await axios.get(`http://localhost:5000/api/products?limit=10&page=1`);
       const data = response.data;
-  
-      const newProduct = {
-        id: data.id,
-        name: data.name,
-        img: data.img,
-        relevancia: data.relevancia,
-        precio: data.precio,
-        descripcion: data.descripcion,
-        tejido: data.tejido,
-        made:data.made
-      };
-     
-      // Use the useContext hook to access the current list of Pokemon
-      setProductList(prevList => {
-        // Check if the Pokemon already exists in the list based on its id
-        const exists = prevList.some(product => product.id === newProduct.id);
-        if (exists) {
-          alert("El producto ya esta en la lista");
-          return prevList; // Return the unchanged list if the Pokemon is already there
-        } else {
-          return [...prevList, newProduct]; // Add the new Pokemon to the list
-        }
-      });
+      
+      setProductList(data); // Actualiza la lista de productos con los datos obtenidos de la API
   
     } catch (error) {
-      console.log('Ese Producto no existe');
+      console.log('Error al buscar productos:', error);
     } finally {
       setIsLoading(false);
-      setSearchTerm(''); // Clear the input after search
+      setSearchTerm(''); // Limpia el término de búsqueda después de la búsqueda
     }
   };
 
