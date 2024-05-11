@@ -1,68 +1,26 @@
-/* import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { ProductContext } from '../../../context/ProductContext';
 import ProductosCard from "./ProductosCard";
-  
-  function ListaProductos() {
-    const { productList } = useContext(ProductContext);
-    const [products, setProducts] = useState([]);
-  
-    useEffect(() => {
-      const getProduct = async () => {
-        try {
-          const resp = await fetch(`http://localhost:5000/api/products?limit=10&page=1`)
-          const data = await resp.json();
-          // Guarda en el array de productos el resultado. Procesa los datos
-          setProducts(data);
-        } catch (error) {
-          console.error("Error fetching product data:", error);
-        }
-      };
-      getProduct();
-    }, []); // Array vacío para que se ejecute solo una vez al montar el componente
-  
-    return (
-      <>
-        <ul className="listaProductos">
-          {products.length !== 0 ?
-            products.map((product, i) => (
-              <li key={i}>
-                <article className='listacard'>
-                  <span>{product.name}</span>
-                  <img src={product.img}></img>
-                  <p>Relevancia: {product.relevancia}</p>
-                  <p> {product.precio}</p>
-                </article>
-              </li>
-            ))
-            : <p>cargando...</p>}
-        </ul>
-      </>
-    );
-  }
-  
-  export default ListaProductos; */
-
-  import React, { useContext, useState, useEffect } from 'react';
-import { ProductContext } from '../../../context/ProductContext';
-import ProductosCard from "./ProductosCard";
+import PaginationList from '../PaginationList';
 
 function ListaProductos() {
   const { productList } = useContext(ProductContext);
   const [products, setProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const getProducts = async (page) => {
+    try {
+      const resp = await fetch(`http://localhost:5000/api/products?limit=10&page=${page}`);
+      const data = await resp.json();
+      setProducts(data);
+    } catch (error) {
+      console.error("Error fetching product data:", error);
+    }
+  };
 
   useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const resp = await fetch(`http://localhost:5000/api/products?limit=10&page=1`)
-        const data = await resp.json();
-        // Guarda en el array de productos el resultado. Procesa los datos
-        setProducts(data);
-      } catch (error) {
-        console.error("Error fetching product data:", error);
-      }
-    };
-    getProduct();
-  }, []); // Array vacío para que se ejecute solo una vez al montar el componente
+    getProducts(currentPage + 1); // currentPage + 1 porque la API usa páginas basadas en 1
+  }, [currentPage]);
 
   return (
     <>
@@ -75,11 +33,17 @@ function ListaProductos() {
           ))
           : <p>cargando...</p>}
       </ul>
+      <PaginationList 
+        totalPages={3} // Define el número total de páginas
+        currentPage={currentPage}
+        onPageChange={setCurrentPage}
+      />
     </>
   );
 }
 
 export default ListaProductos;
+
 
   
   

@@ -1,0 +1,30 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+.pagination {
+    gap: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+
+    .prev-button {
+        border: 1px solid $black;
+        width: 150px;
+        height: 30px;
+        margin: 10px;
+        padding: 5px;
+        font-size:large;
+      }
+      
+      .next-button {
+        border: 1px solid $black;
+        width: 150px;
+        height: 30px;
+        margin: 10px;
+        padding: 5px;
+        font-size:large;
+      }
+      
+}
