@@ -31,7 +31,7 @@
 
         &>input {
             width:100%;
-            height: 30px;
+            height: 50px;
             text-align: center;
         }
         .search > input::placeholder {
@@ -40,7 +40,7 @@
 
         &>button {
             width: 100%;
-            height: 30px;
+            height: 50px;
             border: 0.2px solid $black;
             color: $black;
         }

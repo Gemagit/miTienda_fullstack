@@ -3,13 +3,16 @@ import React from "react";
  import { Link } from "react-router-dom";
 
 function ProductosCard({ product }) {
+  const estrella = "⭐";
+
+
   return (
     <>
       <article className='card'>
-        <h4>{product.name}</h4>
         <img src={product.img} alt={product.name} />
+        <h4>{product.name}</h4>
         <p>{product.precio}</p>
-        <p>{product.relevancia}</p>
+        <p>{estrella}{product.relevancia}</p>
       <Link to={`/productos/${product.id}?name=${product.name}&image=${product.img}&relevancia=${product.relevancia}&precio=${product.precio}`}> 
          <button className="more-info-link">Más info</button> 
         </Link>  
