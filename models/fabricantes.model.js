@@ -2,6 +2,10 @@ const mongoose = require('../config/db_mongo');
 
 
 const fabricanteSchema = new mongoose.Schema({
+    id: {
+        type: Number,
+        required:true
+    },
     nombre: {
         type: String,
         required: true
@@ -14,10 +18,6 @@ const fabricanteSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    id_fabricante: {
-        type: Number,
-        required:true
-    }
 });
 
 const Fabricante = mongoose.model('Fabricante', fabricanteSchema);

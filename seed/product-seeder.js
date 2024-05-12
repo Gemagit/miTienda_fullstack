@@ -10,7 +10,8 @@ var newProducts = [
         precio:" 69.95€",
         descripcion: "Vestido midi confeccionado en hilatura con mezcla de lana. Cuello subido fluido y manga sisa. Detalle de tejido drapeado en lateral. Bajo con abertura en espalda. Cierre con cremallera oculta.Un vestido midi de corte minimalista con detalle drapeado a un lateral confeccionado en un tejido delicado con mezcla de lana de tacto agradable. En su diseño depurado destaca el cuello subido que se abre en un escote en pico a la espalda. Una prenda sencilla y a la vez sofisticada.",
         tejido: "hilatura y lana",
-        made: "Thailandia"
+        made: "Thailandia",
+        fabricante_id:"663bd311864a2602496dc0f2"
     },
         {
         id: "002",
@@ -20,7 +21,8 @@ var newProducts = [
         precio:"49.95€",
         descripcion: "Blazer de cuello solapa y manga larga con hombreras. Cierre frontal cruzado con botones con relieve.",
         tejido: "poliéster",
-        made: "China"
+        made: "China",
+        fabricante_id:"663bd311864a2602496dc103"
     },
         {
         id: "003",
@@ -30,7 +32,8 @@ var newProducts = [
         precio:" 35.95€",
         descripcion: "Bolso formato saca con detalle de abalorios en forma de flor y flecos. Asa de hombro. Cierre mediante cremallera.",
         tejido: "poliéster",
-        made: "Turquía"
+        made: "Turquía",
+        fabricante_id:"663bd311864a2602496dc104"
     },
         {
         id: "004",
@@ -40,7 +43,8 @@ var newProducts = [
         precio:" 17.95€",
         descripcion: "Sandalia plana engomada con posición para el dedo. Suela gruesa. Acabada en punta redonda.",
         tejido: "polietileno",
-        made: ""
+        made: "",
+        fabricante_id:"663bd311864a2602496dc0f7"
     },
         {
         id: "005",
@@ -50,7 +54,8 @@ var newProducts = [
         precio:"19.95 €",
         descripcion: "Top bikini triangular con detalle de pieza metálica en pecho. Acabados a contraste. Forro interior.",
         tejido: "poliamida reciclada",
-        made: "Marruecos"
+        made: "Marruecos",
+        fabricante_id:"663bd311864a2602496dc0f9"
     },
         {
         id: "006",
@@ -60,7 +65,8 @@ var newProducts = [
         precio:" 17.95€",
         descripcion: "Braguita bikini con lazadas laterales.",
         tejido: "poliamida",
-        made: "India"
+        made: "India",
+        fabricante_id:"663bd311864a2602496dc0fa"
     },
         {
         id: "007",
@@ -70,7 +76,8 @@ var newProducts = [
         precio:" 17.95€",
         descripcion: "Cinturón elástico de 5 cm de ancho con hebilla redonda efecto acetato.",
         tejido: "acetato",
-        made: "Marruecos"
+        made: "Marruecos",
+        fabricante_id:"663bd311864a2602496dc0fc"
     },
          {
         id: "008",
@@ -80,7 +87,8 @@ var newProducts = [
         precio:" 22.95€",
         descripcion: "Body de cuello halter con lazada. Espalda descubierta. Tejido drapeado. Cierre en bajo con botones a presión y lateral con cremallera oculta en costura.",
         tejido: "poliéster",
-        made: "Turquía"
+        made: "Turquía",
+        fabricante_id:"663bd311864a2602496dc0fe"
     },
          {
         id: "009",
@@ -90,7 +98,8 @@ var newProducts = [
         precio:" 15.95€",
         descripcion: "Collar de cordón largo realizado en piel. Colgante con forma de guindilla.",
         tejido: "zinc",
-        made: "España"
+        made: "España",
+        fabricante_id:"663bd311864a2602496dc10e"
     },
         {
         id: "010",
@@ -100,7 +109,8 @@ var newProducts = [
         precio:" 29.95€",
         descripcion: "Jeans de tiro alto con cinco bolsillos. Pernera recta y larga. Cierre frontal con cremallera y botón.",
         tejido: "algodón",
-        made: "China"
+        made: "China",
+        fabricante_id:"663bd311864a2602496dc0fc"
     },
         {
         id: "011",
@@ -110,7 +120,8 @@ var newProducts = [
         precio:" 39.95€",
         descripcion: "Zapato tipo alpargata en tejido. Tacón tipo cuña. Tiras atadas al tobillo.",
         tejido: "poliuretano",
-        made: "España"
+        made: "España",
+        fabricante_id:"663bd311864a2602496dc0f8"
     },
         {
         id: "012",
@@ -120,7 +131,8 @@ var newProducts = [
         precio:" 19.95€",
         descripcion: "Falda mini con pliegues. Tiro alto y cintura elástica.",
         tejido: "algodón",
-        made: "París"
+        made: "París",
+        fabricante_id:"663bd311864a2602496dc10e"
     },
         {
         id: "013",
@@ -130,7 +142,8 @@ var newProducts = [
         precio:" 25.95€",
         descripcion: "Jersey polo fino de cuello solapa y manga corta. Bolsillo delantero de plastrón. Cierre frontal con botones.",
         tejido: "acetato",
-        made: "Reino Unido"
+        made: "Reino Unido",
+        fabricante_id:"663bd311864a2602496dc0f8"
     },
     {
         id: "014",
@@ -140,7 +153,8 @@ var newProducts = [
         precio:" 19.95€",
         descripcion: "Top corto de escote pico y tirantes anchos. Detalle de elásticos y lazo en pecho.",
         tejido: "algodón",
-        made: "EEUU"
+        made: "EEUU",
+        fabricante_id:"663bd311864a2602496dc0fe"
     },
     {
         id: "015",
@@ -150,7 +164,8 @@ var newProducts = [
         precio:" 79.95€",
         descripcion: "Trench oversize confeccionado en hilatura con mezcla de algodón. Cuello subido y manga larga ajustable con trabilla y botones a presión. Bolsillos en delantero",
         tejido: "algodón",
-        made: "Marruecos"
+        made: "Marruecos",
+        fabricante_id:"663bd311864a2602496dc0f8"
     },
     {
         id: "016",
@@ -160,7 +175,8 @@ var newProducts = [
         precio:" 17.95€",
         descripcion: "Braguita bikini tipo cortinilla. Forro interior.",
         tejido: "Poliéster",
-        made: "España"
+        made: "España",
+        fabricante_id:""
     },
     {
         id: "017",
@@ -170,7 +186,8 @@ var newProducts = [
         precio:" 29.95€",
         descripcion: "Vestido corto de cuello halter y escote pico pronunciado. Tejido drapeado. Cierre lateral con cremallera oculta en costura.",
         tejido: "poliéster",
-        made: "Portugal"
+        made: "Portugal",
+        fabricante_id:"663bd311864a2602496dc101"
     },
     {
         id: "018",
@@ -180,7 +197,8 @@ var newProducts = [
         precio:" 49.95€",
         descripcion: "Zapato plano tipo zueco en serraje. Detalle de hebilla metálica en un lateral. Acabado punta redonda.",
         tejido: "piel vacuno",
-        made: "España"
+        made: "España",
+        fabricante_id:"663bd311864a2602496dc10d"
     },
     {
         id: "019",
@@ -190,7 +208,8 @@ var newProducts = [
         precio:" 25.95€",
         descripcion: "Zapato tipo sandalia plana de piel con detalle de tiras cruzadas en la parte delantera.",
         tejido: "piel ovina",
-        made: "India"
+        made: "India",
+        fabricante_id:"663bd311864a2602496dc0fe"
     },
     {
         id: "020",
@@ -200,7 +219,8 @@ var newProducts = [
         precio:" 12.95€",
         descripcion: "Pendientes metálicos colgantes con aplicación de perlas en forma de lazo. Cierre con tuerca.",
         tejido: "polimetacrilato de metilo",
-        made: "Francia"
+        made: "Francia",
+        fabricante_id:"663bd311864a2602496dc0fe"
     },
     {
         id: "021",
@@ -210,7 +230,8 @@ var newProducts = [
         precio:" 25.95€",
         descripcion: "Vestido corto confeccionado en hilatura con poliamida. Escote redondo y tirantes finos ajustables. Costuras termoselladas. ",
         tejido: "poliamida",
-        made: "China"
+        made: "China",
+        fabricante_id:"663bd311864a2602496dc10d"
     },
     {
         id: "022",
@@ -220,7 +241,8 @@ var newProducts = [
         precio:" 25.95€",
         descripcion: "Chaqueta de cuello redondo y manga corta. Acabados en rib. Cierre frontal con botones forrados a tono.",
         tejido: "acrílico",
-        made: "Francia"
+        made: "Francia",
+        fabricante_id:"663bd311864a2602496dc10d"
     },
     {
         id: "023",
@@ -230,7 +252,8 @@ var newProducts = [
         precio:" 45.95€",
         descripcion: "Shorts de tiro alto con cremallera lateral oculta en costura. Detalle de bordados combinados a contraste y aplicación efecto espejo.",
         tejido: "algodón",
-        made: "China"
+        made: "China",
+        fabricante_id:"663bd311864a2602496dc0fe"
     },
     {
         id: "024",
@@ -240,7 +263,8 @@ var newProducts = [
         precio:" 17.95€",
         descripcion: "Body entallado de escote pico y manga sisa. Tejido combinado en popelín con volantes a tono. Detalle de tira en espalda. Cierre en bajo con botones presión.",
         tejido: "algodón",
-        made: "Bangladesh"
+        made: "Bangladesh",
+        fabricante_id:"663bd311864a2602496dc101"
     },
     {
         id: "025",
@@ -250,7 +274,8 @@ var newProducts = [
         precio:" 6.95€",
         descripcion: "Camiseta confeccionada en algodón 100% de escote redondo y manga corta. Detalle de texto en delantero combinado a contraste.",
         tejido: "algodón",
-        made: "España"
+        made: "España",
+        fabricante_id:"663bd311864a2602496dc0ff"
     },
     {
         id: "026",
@@ -260,7 +285,8 @@ var newProducts = [
         precio:" 29.95€",
         descripcion: "Vestido midi satinado de escote pico y tirantes finos ajustables. Detalle de espalda descubierta con tira elástica. Forro interior combinado a tono. Cierre con cremallera oculta en costura.",
         tejido: "viscosa",
-        made: "Reino Unido"
+        made: "Reino Unido",
+        fabricante_id:"663bd311864a2602496dc101"
     },
     {
         id: "027",
@@ -270,7 +296,8 @@ var newProducts = [
         precio:" 39.95€",
         descripcion: "Gafas de sol con montura ovalada en acetato. Incluye funda.",
         tejido: "acetato",
-        made: "China"
+        made: "China",
+        fabricante_id:"663bd311864a2602496dc10d"
     },
     {
         id: "028",
@@ -280,7 +307,8 @@ var newProducts = [
         precio:" 22.95€",
         descripcion: "Bolso formato bandolera. Doble asa ajustable y extraíble, una en tejido. Detalle de costura central. Cierre mediante doble cremallera.",
         tejido: "poliuretano",
-        made: "Marruecos"
+        made: "Marruecos",
+        fabricante_id:"663bd311864a2602496dc0fe"
     },
     {
         id: "029",
@@ -290,7 +318,8 @@ var newProducts = [
         precio:" 49.95€",
         descripcion: "Blazer de cuello solapa y manga larga con hombreras. Bolsillos delanteros con solapa. Forro interior combinado a contraste.",
         tejido: "poliéster",
-        made: "México"
+        made: "México",
+        fabricante_id:"663bd311864a2602496dc0ff"
     },
     {
         id: "030",
@@ -300,7 +329,8 @@ var newProducts = [
         precio:" 99.95€",
         descripcion: "Zapato tipo botín biker en piel con detalle de tachas. Tiras con hebilla decorativa. Acabado en punta cuadrada.",
         tejido: "piel vacuno",
-        made: "Marruecos"
+        made: "Marruecos",
+        fabricante_id:"663bd311864a2602496dc101"
     }
     ];
 
