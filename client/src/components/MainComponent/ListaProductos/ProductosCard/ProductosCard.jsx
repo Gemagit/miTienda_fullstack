@@ -1,5 +1,4 @@
 import React from "react";
-// Importa Link desde la biblioteca de React Router
  import { Link } from "react-router-dom";
 
 function ProductosCard({ product }) {
@@ -12,11 +11,11 @@ function ProductosCard({ product }) {
         <img src={product.img} alt={product.name} />
         <h4>{product.name}</h4>
         <p>{product.precio}</p>
-        <p>{estrella}{product.relevancia}</p>
+        <p>{estrella} {product.relevancia}</p>
+        </article>
       <Link to={`/productos/${product.id}?name=${product.name}&img=${product.img}&relevancia=${product.relevancia}&precio=${product.precio}&descripcion=${product.descripcion}&tejido=${product.tejido}&made=${product.made}`}> 
-         <button className="more-info-link">Más info</button> 
-        </Link>  
-      </article>
+         <button className="more-info-link">Más info &rarr;</button> 
+        </Link> 
     </>
   );
 }

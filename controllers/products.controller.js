@@ -1,6 +1,5 @@
 const Product = require("../models/productos.model");//BBDD
 
-
 const getProduct = async (req, res) => {
     let products = [];
     const pagination = req.query.hasOwnProperty('page') && req.query.hasOwnProperty('limit');
@@ -15,7 +14,19 @@ const getProduct = async (req, res) => {
                 return res.status(400).json({ message: "Página no válida" });
             }
 
-            products = await Product.find({}, '-_id -__v')
+            let query = {}; // Inicializa el objeto de consulta
+
+            // Si hay un término de búsqueda, añade la lógica de búsqueda al objeto de consulta
+            if (req.query.hasOwnProperty('searchTerm')) {
+                query = {
+                    $or: [
+                        { name: { $regex: req.query.searchTerm, $options: 'i' } }, // Búsqueda por nombre
+                        { fabricante: { $regex: req.query.searchTerm, $options: 'i' } } // Búsqueda por fabricante
+                    ]
+                };
+            }
+
+            products = await Product.find(query, '-_id -__v')
                 .sort({ _id: 1 })
                 .limit(limit)
                 .skip(skipIndex)
@@ -29,32 +40,24 @@ const getProduct = async (req, res) => {
     } catch (err) {
         res.status(400).json({ message: err });
     }
-}
-
-
+};
 
 const createProduct = async (req, res) => {
     console.log(req.body); // Objeto recibido de producto nuevo
     const newProduct = new Product(req.body); // {} nuevo producto a guardar
-    // Líneas
-    //para guardar 
-    // en MongoDB
     try {
         const response = await newProduct.save();
         res.status(201).json({ message: `Producto ${response.name} guardado en el sistema con ID: ${response.id}` });
     } catch (err) {
         res.status(400).json({ message: err });
     }
-}
-
-
-//const editProduct = ...
-//const deleteProduct = ...
+};
 
 const product = {
     getProduct,
     createProduct
-    //editProduct,
-    //deleteProduct
 }
+
 module.exports = product;
+
+

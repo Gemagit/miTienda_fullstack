@@ -13,16 +13,16 @@ function Pagination({ totalPages, currentPage, onPageChange }) {
   return (
     <div className="pagination">
       {currentPage === 0 && totalPages > 1 && (
-        <button className="next-button" onClick={goToNextPage}>Siguiente</button>
+        <button className="next-button" onClick={goToNextPage}>Siguiente &rarr;</button>
       )}
       {currentPage > 0 && currentPage < totalPages - 1 && (
         <>
-          <button className="prev-button" onClick={goToPrevPage}>Anterior</button>
-          <button className="next-button" onClick={goToNextPage}>Siguiente</button>
+          <button className="prev-button" onClick={goToPrevPage}>&larr; Anterior</button>
+          <button className="next-button" onClick={goToNextPage}>Siguiente &rarr;</button>
         </>
       )}
       {currentPage === totalPages - 1 && (
-        <button className="prev-button" onClick={goToPrevPage}>Anterior</button>
+        <button className="prev-button" onClick={goToPrevPage}>&larr; Anterior</button>
       )}
     </div>
   );
