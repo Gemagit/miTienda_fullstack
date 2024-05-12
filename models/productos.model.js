@@ -35,7 +35,7 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    _id: {
+    fabricante_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Fabricante'
     }

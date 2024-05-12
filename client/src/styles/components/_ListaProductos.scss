@@ -3,14 +3,12 @@
 
 .listaProductos {
     width:100%;
-    max-width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     margin:0;
     padding: 0;
     margin-bottom: 40px;
-
 
     .listacard {
         height: auto;
@@ -34,7 +32,7 @@
         /* Ancho del 50% menos el espacio entre las imágenes */
         flex-grow: 1;
         /* Permite que las imágenes se expandan para ocupar todo el espacio disponible */
-        max-width: 18%;
+        width: 100%;
         /* Establece un ancho máximo para las imágenes */
         list-style: none;
     }
@@ -42,5 +40,55 @@
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+.order {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .orderby {
+        font-size:large;
+        width: 40%;
+        border: none; 
+        background-color: transparent; 
+        padding: 0; 
+        margin: 0; 
+    }
+    
+    .orderasc {
+        margin-left: 30px;
+        font-size:large;
+        width: 40%;
+        border: none; 
+        background-color: transparent; 
+        padding: 0; 
+        margin: 0; 
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .listaProductos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        
+    }
+
+    .listaProductos ul {
+        width: 100%;
+    }
+
+    .listaProductos li {
+        width: calc(20% - 20px);
+        margin: 10px;
     }
 }

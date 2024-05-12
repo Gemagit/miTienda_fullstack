@@ -20,14 +20,16 @@ function ProductosDetalles() {
         <h3>{name}</h3>
         <p>{precio}</p>
         <img src={img} alt={name} />
-        <p>{estrella}{relevancia}</p>
+        <p>{estrella} {relevancia}</p>
         <p>{descripcion}</p>
         <p>Tejido: {tejido}</p>
         <p>Made in {made}</p>
     </article>
+    <article className='currentpage'>
     <Link to="/">
-    <button className='buttonDetails'>Volver a la página principal</button> 
+    <button className='buttonDetails'>&larr; Volver a la página principal</button> 
   </Link>
+  </article>
   </>
   );
 }

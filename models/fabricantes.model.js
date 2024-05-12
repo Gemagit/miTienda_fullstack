@@ -14,9 +14,9 @@ const fabricanteSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
+    id_fabricante: {
+        type: Number,
+        required:true
     }
 });
 

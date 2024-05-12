@@ -30,12 +30,21 @@
 
 }
 
-.buttonDetails {
-        width: 90%;
+.currentpage {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-bottom: 50px;
+
+    .buttonDetails {
         height: 50px;
         border: none; 
         background-color: transparent; 
         padding: 50px; 
         margin: 0; 
         font-size: large;
+        text-align: right;
+        font-weight: bold;
+}
 }
