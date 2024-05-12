@@ -1,4 +1,4 @@
-const Product = require("../models/productos.model");//BBDD
+const Product = require("../models/productos.model");
 
 const getProduct = async (req, res) => {
     let products = [];
@@ -18,46 +18,52 @@ const getProduct = async (req, res) => {
 
             // Si hay un término de búsqueda, añade la lógica de búsqueda al objeto de consulta
             if (req.query.hasOwnProperty('searchTerm')) {
+                const searchTerm = req.query.searchTerm;
                 query = {
                     $or: [
-                        { name: { $regex: req.query.searchTerm, $options: 'i' } }, // Búsqueda por nombre
-                        { fabricante: { $regex: req.query.searchTerm, $options: 'i' } } // Búsqueda por fabricante
+                        { name: { $regex: searchTerm, $options: 'i' } }, // Búsqueda por nombre
+                        { fabricante: { $regex: searchTerm, $options: 'i' } } // Búsqueda por fabricante
                     ]
                 };
             }
 
-            products = await Product.find(query, '-_id -__v')
-                .sort({ _id: 1 })
+            // Añadir lógica de ordenamiento
+            const sortField = req.query.sortBy || '_id'; // Campo predeterminado de ordenamiento
+            const sortOrder = req.query.order || 'asc'; // Orden predeterminado
+
+            // Construye el objeto de opciones de ordenamiento
+            const sortOptions = {};
+            sortOptions[sortField] = sortOrder === 'asc' ? 1 : -1;
+
+            products = await Product.find(query, '-__v')
+                .sort(sortOptions) // Aplica el ordenamiento
                 .limit(limit)
                 .skip(skipIndex)
                 .exec();
 
-            res.status(200).json(products); // Devuelve el producto
+            res.status(200).json(products); // Devuelve los productos encontrados
         } else {
-            products = await Product.find({}, '-_id -__v');
+            // Si no hay paginación, devuelve todos los datos de productos
+            products = await Product.find({}, '-__v');
             res.status(200).json(products); // Devuelve todos los datos
         }
     } catch (err) {
-        res.status(400).json({ message: err });
+        res.status(400).json({ message: err.message });
     }
 };
 
 const createProduct = async (req, res) => {
     console.log(req.body); // Objeto recibido de producto nuevo
-    const newProduct = new Product(req.body); // {} nuevo producto a guardar
+    const newProduct = new Product(req.body); // Crea una nueva instancia de producto
     try {
-        const response = await newProduct.save();
-        res.status(201).json({ message: `Producto ${response.name} guardado en el sistema con ID: ${response.id}` });
+        const response = await newProduct.save(); // Guarda el nuevo producto en la base de datos
+        res.status(201).json({ message: `Producto ${response.name} guardado en el sistema con ID: ${response._id}` });
     } catch (err) {
-        res.status(400).json({ message: err });
+        res.status(400).json({ message: err.message });
     }
 };
 
-const product = {
+module.exports = {
     getProduct,
     createProduct
-}
-
-module.exports = product;
-
-
+};
