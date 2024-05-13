@@ -1,4 +1,5 @@
 const mongoose = require('../config/db_mongo');
+const ObjectId = require('mongodb').ObjectId;
 
 
 const productSchema = new mongoose.Schema({
@@ -37,7 +38,7 @@ const productSchema = new mongoose.Schema({
     },
     fabricante_id: {
         type: mongoose.Schema.Types.ObjectId,
-        type: String,
+        required: true,
         ref: 'Fabricante'
     }
 });

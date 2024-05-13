@@ -36,6 +36,7 @@ const getProduct = async (req, res) => {
             sortOptions[sortField] = sortOrder === 'asc' ? 1 : -1;
 
             products = await Product.find(query, '-__v')
+                .populate('_id', '-__v') // Popula los datos del fabricante
                 .sort(sortOptions) // Aplica el ordenamiento
                 .limit(limit)
                 .skip(skipIndex)
@@ -44,7 +45,8 @@ const getProduct = async (req, res) => {
             res.status(200).json(products); // Devuelve los productos encontrados
         } else {
             // Si no hay paginación, devuelve todos los datos de productos
-            products = await Product.find({}, '-__v');
+            products = await Product.find({}, '-__v')
+            .populate("fabricante_id", "nombre");
             res.status(200).json(products); // Devuelve todos los datos
         }
     } catch (err) {
@@ -57,7 +59,7 @@ const createProduct = async (req, res) => {
     const newProduct = new Product(req.body); // Crea una nueva instancia de producto
     try {
         const response = await newProduct.save(); // Guarda el nuevo producto en la base de datos
-        res.status(201).json({ message: `Producto ${response.name} guardado en el sistema con ID: ${response._id}` });
+        res.status(201).json({ message: `Producto ${response.name} guardado en el sistema con ID: ${response.id}` });
     } catch (err) {
         res.status(400).json({ message: err.message });
     }

@@ -1,7 +1,7 @@
 //Rutas para la API
 const express = require('express');
 const router = express.Router();
-const { handleSearchTerm } = require('../utils/middelware');
+const { handleSearchTerm } = require('../utils/handleSearch');
 const products = require('../controllers/products.controller');
 
 
