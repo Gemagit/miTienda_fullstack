@@ -1,5 +1,4 @@
-
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import { ProductContext } from '../../../context/ProductContext';
 import ListaProductos from '../ListaProductos';
@@ -8,33 +7,71 @@ function SearchProductosFabricantes() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { setProductList } = useContext(ProductContext);
+  //const [newState, setNewState] = useState(null);
 
-  const searchProduct = async (searchTerm) => {
-    try {
-      setIsLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/products?limit=10&page=1&searchTerm=${searchTerm}`);
-      const data = response.data;
-      
-      setProductList(data); // Actualiza la lista de productos con los datos obtenidos de la API
-  
-    } catch (error) {
-      console.log('Error al buscar productos:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+
+  useEffect(() => {
+    const initProducts = async () => {
+      try {
+        setIsLoading(true);
+        const response = await axios.get(`http://localhost:5000/api/products?limit=10&page=1`);
+        const data = response.data;
+        console.log("a")
+        setProductList(data);
+      } catch (error) {
+        console.log('Error al buscar productos:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    initProducts();
+  }, []);
+
+
+/*  useEffect(() => {
+    const newData = async () => {
+      try {
+        setIsLoading(true);
+        const response = await axios.get(`http://localhost:5000/api/products?limit=10&page=1&searchterm=${searchTerm}`);
+        setProductList(response.data)
+        //setNewState(response.data)
+      } catch (error) {
+        console.log('Error al recuperar datos adicionales:', error);
+      } finally {
+        setIsLoading(false);
+        setSearchTerm()
+      }
+    };
+    newData()
+  }, [newState]);  */
+
+  useEffect(() => {
+    const newData = async () => {
+      try {
+        setIsLoading(true);
+        const response = await axios.get(`http://localhost:5000/api/products?limit=10&page=1&searchterm=${searchTerm}`);
+        setProductList();
+      } catch (error) {
+        console.log('Error al recuperar datos adicionales:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    newData();
+  }, [searchTerm]); // Dependencia cambiada a 'searchTerm'
+
 
   const handleChange = (event) => {
     const value = event.target.value;
     setSearchTerm(value);
   };
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (searchTerm.trim()) {
-      searchProduct(searchTerm);
-    }
   }
+
+
 
   return (
     <section className='sectionsearch'>
@@ -57,3 +94,5 @@ function SearchProductosFabricantes() {
 }
 
 export default SearchProductosFabricantes;
+
+

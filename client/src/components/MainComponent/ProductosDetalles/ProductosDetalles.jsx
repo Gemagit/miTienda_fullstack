@@ -25,6 +25,11 @@ function ProductosDetalles() {
         <p>Tejido: {tejido}</p>
         <p>Made in {made}</p>
     </article>
+    <article className='fabricante'>
+        <h3>Nombre: Fabricante Elegante S.A. </h3>
+        <p>CIF :D45678901</p>
+        <p>Dirección: Avenida Modernidad, 15, Ciudad Moderna, País Moderno</p>
+      </article>
     <article className='currentpage'>
     <Link to="/">
     <button className='buttonDetails'>&larr; Volver a la página principal</button> 
