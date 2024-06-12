@@ -2,7 +2,7 @@
 
 
 ## Introduction
-Os presento mi primer proyecto Full Satck. Un ejercicio propuesto en clase en el que pongo en práctica mis conocimientos adquiridos durante todo el curso.
+Os presento mi primer proyecto Full Stack. Un ejercicio propuesto en clase en el que pongo en práctica mis conocimientos adquiridos durante todo el curso.
 
 Desarrollar una tienda online donde se muestre un listado de artículos dividido en 10 por
 página, con dos controles: ‘anterior’ y ‘siguiente’.
